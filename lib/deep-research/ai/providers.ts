@@ -31,14 +31,14 @@ export const availableModels = Object.values(AI_MODEL_DISPLAY);
 
 // OpenAI Client
 const openai = createOpenAI({
-  baseURL: 'https://bznewoneapi.zeabur.app/v1',
+  baseURL: process.env.OPENAI_BASE_URL!,
   apiKey: process.env.OPENAI_KEY!,
 });
 
 // Create model instances with configurations
 export function createModel(modelId: AIModel, apiKey?: string) {
   const client = createOpenAI({
-    baseURL: 'https://bznewoneapi.zeabur.app/v1',
+    baseURL: process.env.OPENAI_BASE_URL!,
     apiKey: apiKey || process.env.OPENAI_KEY!,
   });
 
